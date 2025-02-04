@@ -25,10 +25,10 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get('/api/whoami', function(req, res){
-  const ip = req.connection.remoteAddress;
+  const ip = req.ip;
   const language = req.headers["accept-language"];
   const browser = req.headers["user-agent"];
-  res.json({ipadress: ip, language: language, software: browser});
+  res.json({ipaddress: ip, language: language, software: browser});
 });
 
 // listen for requests :)
